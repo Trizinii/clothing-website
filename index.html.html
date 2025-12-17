@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trizinii | Премиальная молодежная одежда</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="light-theme">
+    <!-- Шапка сайта -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1><span class="logo-text">TRIZINII</span></h1>
+                    <p class="tagline">Эксклюзивная молодежная одежда</p>
+                </div>
+                
+                <div class="header-controls">
+                    <!-- Переключатель темы -->
+                    <div class="theme-switcher">
+                        <span class="theme-label">ТЕМА</span>
+                        <div class="theme-buttons">
+                            <button class="theme-btn light-btn active" data-theme="light">
+                                <i class="fas fa-sun"></i>
+                            </button>
+                            <button class="theme-btn dark-btn" data-theme="dark">
+                                <i class="fas fa-moon"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Иконка корзины -->
+                    <div class="cart-icon-container">
+                        <button id="cartButton" class="cart-button">
+                            <i class="fas fa-shopping-bag"></i>
+                            <span id="cartCount" class="cart-count">0</span>
+                        </button>
+                        <span class="cart-total" id="cartTotal">0 ₽</span>
+                    </div>
+                    
+                    <!-- Кнопки авторизации -->
+                    <div class="auth-buttons" id="authButtons">
+                        <button id="loginBtn" class="btn btn-outline btn-auth">
+                            <i class="fas fa-sign-in-alt"></i> Войти
+                        </button>
+                        <button id="registerBtn" class="btn btn-primary btn-auth">
+                            <i class="fas fa-user-plus"></i> Регистрация
+                        </button>
+                    </div>
+                    
+                    <!-- Информация о пользователе -->
+                    <div class="user-info" id="userInfo" style="display: none;">
+                        <i class="fas fa-user-circle"></i>
+                        <span id="userName">Пользователь</span>
+                        <button id="logoutBtn" class="btn btn-outline btn-auth">
+                            <i class="fas fa-sign-out-alt"></i> Выйти
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#home" class="nav-link active">Главная</a></li>
+                    <li><a href="#new" class="nav-link">Новинки</a></li>
+                    <li><a href="#men" class="nav-link">Мужское</a></li>
+                    <li><a href="#women" class="nav-link">Женское</a></li>
+                    <li><a href="#sale" class="nav-link">Распродажа</a></li>
+                    <li><a href="#reviews" class="nav-link">Отзывы</a></li>
+                    <li><a href="#about" class="nav-link">О бренде</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Главный баннер -->
+        <!-- ВСТАВЬТЕ СВОЮ КАРТИНКУ ВМЕСТО ССЫЛКИ НИЖЕ -->
+        <section id="home" class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-badge">НОВАЯ КОЛЛЕКЦИЯ</div>
+                    <h1 class="hero-title">URBAN ELEGANCE <span class="highlight">2024</span></h1>
+                    <p class="hero-text">Современная элегантность для нового поколения. Эксклюзивные модели, премиальные материалы и смелые дизайнерские решения.</p>
+                    <div class="hero-actions">
+                        <a href="#new" class="btn btn-primary btn-large">
+                            <span>Смотреть коллекцию</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <a href="#sale" class="btn btn-outline btn-large">
+                            <span>Распродажа</span>
+                            <i class="fas fa-tag"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="image-frame">
+                        <img src="https://i.pinimg.com/originals/d1/b0/fb/d1b0fb5551c13767ec116f578109087f.jpg" alt="Коллекция Trizinii">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Категории товаров -->
+        <section id="categories" class="categories">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Коллекции</h2>
+                    <p class="section-subtitle">Исследуйте наши премиальные категории</p>
+                </div>
+                <div class="category-grid">
+                    <!-- Мужское -->
+                    <div class="category-card" data-category="men">
+                        <div class="category-image">
+                            <!-- ВСТАВЬТЕ СВОЮ КАРТИНКУ ВМЕСТО ССЫЛКИ НИЖЕ -->
+                            <img src="https://www.buro247.ru/images/2021/11/1637229868068771.jpg" alt="Мужская одежда">
+                            <div class="category-overlay">
+                                <div class="category-content">
+                                    <h3>Мужское</h3>
+                                    <p>Элегантные решения для современного мужчины</p>
+                                    <button class="btn btn-outline view-category" data-category="men">
+                                        <span>Смотреть коллекцию</span>
+                                        <i class="fas fa-arrow-right"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Женское -->
+                    <div class="category-card" data-category="women">
+                        <div class="category-image">
+                            <!-- ВСТАВЬТЕ СВОЮ КАРТИНКУ ВМЕСТО ССЫЛКИ НИЖЕ -->
+                            <img src="https://i.pinimg.com/736x/a0/2b/ae/a02baed13d065c193ee005d03d309aa9.jpg" alt="Женская одежда">
+                            <div class="category-overlay">
+                                <div class="category-content">
+                                    <h3>Женское</h3>
+                                    <p>Утонченная женственность в каждой детали</p>
+                                    <button class="btn btn-outline view-category" data-category="women">
+                                        <span>Смотреть коллекцию</span>
+                                        <i class="fas fa-arrow-right"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Распродажа -->
+                    <div class="category-card" data-category="sale">
+                        <div class="category-image">
+                            <!-- ВСТАВЬТЕ СВОЮ КАРТИНКУ ВМЕСТО ССЫЛКИ НИЖЕ -->
+                            <img src="https://www.pravilamag.ru/upload/img_cache/f77/f77bc094cfeef754ff43e4af60062f97_cropped_510x639.webp" alt="Распродажа">
+                            <div class="category-overlay">
+                                <div class="category-content">
+                                    <h3>Распродажа</h3>
+                                    <p>Эксклюзивные предложения со скидкой до 50%</p>
+                                    <button class="btn btn-outline view-category" data-category="sale">
+                                        <span>Найти выгоду</span>
+                                        <i class="fas fa-arrow-right"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Новинки -->
+        <section id="new" class="products">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Новые поступления</h2>
+                    <p class="section-subtitle">Самые свежие модели сезона</p>
+                </div>
+                <div class="product-grid" id="newProducts">
+                    <!-- Товары загружаются динамически -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Мужская коллекция -->
+        <section id="men" class="collection-section">
+            <div class="container">
+                <div class="collection-header">
+                    <h2 class="collection-title">Мужская коллекция</h2>
+                    <p class="collection-subtitle">Современный стиль для уверенных мужчин</p>
+                </div>
+                <div class="collection-grid" id="menProducts">
+                    <!-- Товары загружаются динамически -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Женская коллекция -->
+        <section id="women" class="collection-section">
+            <div class="container">
+                <div class="collection-header">
+                    <h2 class="collection-title">Женская коллекция</h2>
+                    <p class="collection-subtitle">Элегантность и стиль в каждой детали</p>
+                </div>
+                <div class="collection-grid" id="womenProducts">
+                    <!-- Товары загружаются динамически -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Распродажа -->
+        <section id="sale" class="sale-section">
+            <div class="container">
+                <div class="sale-header">
+                    <div class="sale-badge">ДО -50%</div>
+                    <h2 class="sale-title">Сезонная распродажа</h2>
+                    <p class="sale-subtitle">Лучшие предложения ограниченного времени</p>
+                </div>
+                <div class="sale-grid" id="saleProducts">
+                    <!-- Товары загружаются динамически -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Отзывы -->
+        <section id="reviews" class="reviews-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Отзывы покупателей</h2>
+                    <p class="section-subtitle">Что говорят о нас наши клиенты</p>
+                </div>
+                <div class="reviews-grid" id="reviewsList">
+                    <!-- Отзывы загружаются динамически -->
+                </div>
+                <div class="add-review-btn-container">
+                    <button id="addReviewBtn" class="btn btn-primary">
+                        <i class="fas fa-plus"></i> Добавить отзыв
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- О бренде -->
+        <section id="about" class="about">
+            <div class="container">
+                <div class="about-content">
+                    <div class="about-text">
+                        <div class="about-badge">О БРЕНДЕ</div>
+                        <h2 class="about-title">TRIZINII — философия современного стиля</h2>
+                        <div class="about-description">
+                            <p>Основанный в 2015 году, бренд Trizinii олицетворяет синтез инновационных технологий, премиальных материалов и смелого дизайна. Мы создаем не просто одежду — мы создаем эмоции.</p>
+                            <p>Каждая коллекция — это результат кропотливой работы нашей команды дизайнеров, которые черпают вдохновение в архитектуре, современном искусстве и динамике городской жизни.</p>
+                        </div>
+                    </div>
+                    <div class="about-image">
+                        <div class="image-frame">
+                            <!-- ВСТАВЬТЕ СВОЮ КАРТИНКУ ВМЕСТО ССЫЛКИ НИЖЕ -->
+                            <img src="https://avatars.mds.yandex.net/i?id=b2568f380179c85791abbe81bccce222_l-8259609-images-thumbs&n=13" alt="О бренде Trizinii">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Футер -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3 class="footer-logo">TRIZINII</h3>
+                    <p class="footer-tagline">Переопределяя стиль с 2015 года</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-vk"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-telegram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Коллекции</h4>
+                    <ul>
+                        <li><a href="#new">Новые поступления</a></li>
+                        <li><a href="#men">Мужская одежда</a></li>
+                        <li><a href="#women">Женская одежда</a></li>
+                        <li><a href="#sale">Распродажа</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Помощь</h4>
+                    <ul>
+                        <li><a href="#" id="deliveryInfo">Доставка и оплата</a></li>
+                        <li><a href="#" id="sizeChartBtn">Размерная сетка</a></li>
+                        <li><a href="#reviews">Отзывы</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Контакты</h4>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-phone"></i> 8 (800) 550-35-35</li>
+                        <li><i class="fas fa-envelope"></i> concierge@trizinii.ru</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Москва, Тверская ул., 15</li>
+                        <li><i class="fas fa-clock"></i> Пн-Вс: 10:00-22:00</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Trizinii. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Кнопка возврата в начало -->
+    <button id="backToTop" class="back-to-top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- Модальные окна -->
+    <div id="cartModal" class="modal cart-modal">
+        <div class="modal-content cart-content">
+            <div class="cart-header">
+                <h2><i class="fas fa-shopping-bag"></i> Ваша корзина</h2>
+                <span class="close-modal">&times;</span>
+            </div>
+            
+            <div id="cartItems" class="cart-items">
+                <div class="empty-cart">
+                    <div class="empty-icon">
+                        <i class="fas fa-shopping-bag"></i>
+                    </div>
+                    <h3>Корзина пуста</h3>
+                    <p>Добавьте товары из каталога</p>
+                    <button class="btn btn-outline" id="continueShopping">Продолжить покупки</button>
+                </div>
+            </div>
+            
+            <div class="cart-summary" id="cartSummary" style="display: none;">
+                <div class="summary-row">
+                    <span>Товаров:</span>
+                    <span id="cartItemsCount">0 шт.</span>
+                </div>
+                <div class="summary-row">
+                    <span>Сумма:</span>
+                    <span id="cartSubtotal">0 ₽</span>
+                </div>
+                <div class="summary-row">
+                    <span>Доставка:</span>
+                    <span id="cartShipping">Бесплатно</span>
+                </div>
+                <div class="summary-row total">
+                    <span>Итого:</span>
+                    <span id="cartTotalAmount">0 ₽</span>
+                </div>
+                <div class="cart-actions">
+                    <button id="clearCart" class="btn btn-outline">Очистить корзину</button>
+                    <button id="checkoutBtn" class="btn btn-primary">Оформить заказ</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="authModal" class="modal auth-modal">
+        <div class="modal-content auth-content">
+            <div class="auth-header">
+                <h2 id="authTitle">Вход в аккаунт</h2>
+                <span class="close-modal">&times;</span>
+            </div>
+            
+            <div class="auth-tabs">
+                <button class="auth-tab active" data-tab="login">Вход</button>
+                <button class="auth-tab" data-tab="register">Регистрация</button>
+            </div>
+            
+            <form id="loginForm" class="auth-form active">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="concierge@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Пароль</label>
+                    <input type="password" id="password" placeholder="Введите пароль" required>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Войти</button>
+            </form>
+            
+            <form id="registerForm" class="auth-form">
+                <div class="form-group">
+                    <label for="regName">Имя</label>
+                    <input type="text" id="regName" placeholder="Ваше имя" required>
+                </div>
+                <div class="form-group">
+                    <label for="regEmail">Email</label>
+                    <input type="email" id="regEmail" placeholder="concierge@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="regPassword">Пароль</label>
+                    <input type="password" id="regPassword" placeholder="Не менее 8 символов" required>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Создать аккаунт</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Модальное окно для добавления отзыва с рейтингом звездами -->
+    <div id="reviewModal" class="modal review-modal">
+        <div class="modal-content review-content">
+            <div class="review-header">
+                <h2><i class="fas fa-star"></i> Оставить отзыв</h2>
+                <span class="close-modal">&times;</span>
+            </div>
+            
+            <form id="reviewForm" class="review-form">
+                <div class="form-group">
+                    <label for="reviewProduct">Выберите товар</label>
+                    <select id="reviewProduct" required>
+                        <option value="">-- Выберите товар --</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label>Ваша оценка</label>
+                    <div class="rating-container">
+                        <div class="rating-stars">
+                            <i class="fas fa-star" data-rating="1"></i>
+                            <i class="fas fa-star" data-rating="2"></i>
+                            <i class="fas fa-star" data-rating="3"></i>
+                            <i class="fas fa-star" data-rating="4"></i>
+                            <i class="fas fa-star" data-rating="5"></i>
+                        </div>
+                        <div class="rating-text">
+                            <span id="ratingText">Не оценено</span>
+                        </div>
+                        <input type="hidden" id="reviewRating" value="0">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="reviewText">Текст отзыва</label>
+                    <textarea id="reviewText" rows="4" placeholder="Поделитесь вашим впечатлением о товаре..." required></textarea>
+                    <div class="textarea-counter">
+                        <span id="charCount">0</span>/500 символов
+                    </div>
+                </div>
+                
+                <div class="review-buttons">
+                    <button type="button" class="btn btn-outline" id="cancelReview">Отмена</button>
+                    <button type="submit" class="btn btn-primary">Отправить отзыв</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="deliveryModal" class="modal info-modal">
+        <div class="modal-content info-content">
+            <div class="info-header">
+                <h2><i class="fas fa-shipping-fast"></i> Доставка и оплата</h2>
+                <span class="close-modal">&times;</span>
+            </div>
+            
+            <div class="info-body">
+                <div class="info-card">
+                    <h3>Стоимость доставки</h3>
+                    <ul>
+                        <li>При заказе от 10 000 ₽ — бесплатно</li>
+                        <li>При заказе от 5 000 ₽ — 300 ₽</li>
+                        <li>При заказе до 5 000 ₽ — 500 ₽</li>
+                    </ul>
+                </div>
+                
+                <div class="info-card">
+                    <h3>Способы оплаты</h3>
+                    <p>Мы принимаем банковские карты (Visa, MasterCard, МИР), Apple Pay, Google Pay, а также наличные при получении.</p>
+                </div>
+                
+                <div class="info-card">
+                    <h3>Сроки доставки</h3>
+                    <p>Доставка по Москве — 1-2 рабочих дня. По России — 3-7 рабочих дней в зависимости от региона.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Модальное окно размерной сетки -->
+    <div id="sizeChartModal" class="modal size-chart-modal">
+        <div class="modal-content size-chart-content">
+            <div class="size-chart-header">
+                <h2><i class="fas fa-ruler-combined"></i> Размерная сетка</h2>
+                <span class="close-modal">&times;</span>
+            </div>
+            
+            <div class="size-chart-body">
+                <div class="size-chart-tabs">
+                    <button class="size-tab active" data-tab="clothing">Одежда</button>
+                    <button class="size-tab" data-tab="shoes">Обувь</button>
+                </div>
+                
+                <div class="size-chart-content">
+                    <!-- Таблица для одежды -->
+                    <div class="chart-table active" id="clothingChart">
+                        <h3>Размеры одежды</h3>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Размер</th>
+                                    <th>Грудь (см)</th>
+                                    <th>Талия (см)</th>
+                                    <th>Бедра (см)</th>
+                                    <th>Рост</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>XS</td><td>84-86</td><td>66-68</td><td>90-92</td><td>160-165</td></tr>
+                                <tr><td>S</td><td>88-90</td><td>70-72</td><td>94-96</td><td>165-170</td></tr>
+                                <tr><td>M</td><td>92-94</td><td>74-76</td><td>98-100</td><td>170-175</td></tr>
+                                <tr><td>L</td><td>96-98</td><td>78-80</td><td>102-104</td><td>175-180</td></tr>
+                                <tr><td>XL</td><td>100-102</td><td>82-84</td><td>106-108</td><td>180-185</td></tr>
+                                <tr><td>XXL</td><td>104-106</td><td>86-88</td><td>110-112</td><td>185-190</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <!-- Таблица для обуви -->
+                    <div class="chart-table" id="shoesChart">
+                        <h3>Размеры обуви</h3>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Российский</th>
+                                    <th>Европейский (EU)</th>
+                                    <th>Американский (US)</th>
+                                    <th>Длина стопы (см)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>35</td><td>36</td><td>5</td><td>22.5</td></tr>
+                                <tr><td>36</td><td>37</td><td>6</td><td>23.5</td></tr>
+                                <tr><td>37</td><td>38</td><td>6.5</td><td>24</td></tr>
+                                <tr><td>38</td><td>39</td><td>7.5</td><td>25</td></tr>
+                                <tr><td>39</td><td>40</td><td>8</td><td>25.5</td></tr>
+                                <tr><td>40</td><td>41</td><td>9</td><td>26.5</td></tr>
+                                <tr><td>41</td><td>42</td><td>9.5</td><td>27</td></tr>
+                                <tr><td>42</td><td>43</td><td>10.5</td><td>28</td></tr>
+                                <tr><td>43</td><td>44</td><td>11</td><td>28.5</td></tr>
+                                <tr><td>44</td><td>45</td><td>12</td><td>29.5</td></tr>
+                                <tr><td>45</td><td>46</td><td>12.5</td><td>30</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Модальное окно выбора размера -->
+    <div id="sizeModal" class="modal size-modal">
+        <div class="modal-content size-content">
+            <div class="size-header">
+                <h2><i class="fas fa-ruler"></i> Выберите размер</h2>
+                <span class="close-modal">&times;</span>
+            </div>
+            
+            <div class="size-body">
+                <div class="size-info">
+                    <p>Выберите размер для товара: <span id="sizeProductName"></span></p>
+                </div>
+                
+                <div class="size-options" id="sizeOptions">
+                    <!-- Размеры загружаются динамически -->
+                </div>
+                
+                <div class="size-chart-link">
+                    <a href="#" id="openSizeChartFromModal">Открыть размерную сетку</a>
+                </div>
+                
+                <div class="size-actions">
+                    <button id="confirmSize" class="btn btn-primary">Добавить в корзину</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
